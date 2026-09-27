@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1a1b1d">
+<title>Emrullah Turanlı ve Taşyapı – Olumsuz Kayıtlar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1a1b1d;
+    --raised: #222326;
+    --raised-2: #2a2b2f;
+    --edge: #303236;
+    --rail: #34363a;
+    --text: #e7e3dd;
+    --text-2: #b4afa8;
+    --text-3: #8a857f;
+    --accent: #c9a66b;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+
+  .wrap {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 44px 20px 128px;
+  }
+
+  /* Başlık */
+  .head h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .head p {
+    margin: 14px 0 0;
+    color: var(--text-2);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .head .asof {
+    margin-top: 2px;
+    color: var(--text-3);
+    font-size: 14px;
+  }
+
+  /* Bölüm menüsü */
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 30px 0 0;
+  }
+
+  .toc a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--rail);
+    border-radius: 999px;
+    color: var(--text-2);
+    font-size: 14.5px;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+
+  .toc a:hover {
+    color: var(--text);
+    border-color: #4a4c50;
+    background: var(--raised);
+  }
+
+  /* Bölümler */
+  section {
+    margin-top: 68px;
+    scroll-margin-top: 24px;
+  }
+
+  h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 30px;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 1.3;
+  }
+
+  h2 .n {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-3);
+  }
+
+  /* Kayıt hattı */
+  .log {
+    list-style: none;
+    margin: 0 0 0 5px;
+    padding: 0 0 0 23px;
+    border-left: 1px solid var(--rail);
+  }
+
+  .entry {
+    position: relative;
+    padding-bottom: 44px;
+  }
+
+  .entry:last-child { padding-bottom: 4px; }
+
+  .entry::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  .when {
+    margin: 0;
+    color: var(--accent);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  h3 {
+    margin: 4px 0 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .entry p {
+    margin: 10px 0 0;
+    color: var(--text-2);
+    font-size: 16.5px;
+  }
+
+  .entry ul {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+  }
+
+  .entry li {
+    position: relative;
+    margin-top: 12px;
+    padding-left: 18px;
+    color: var(--text-2);
+    font-size: 16.5px;
+  }
+
+  .entry li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.85em;
+    width: 7px;
+    height: 1px;
+    background: var(--text-3);
+  }
+
+  .entry li b { color: var(--text); font-weight: 500; }
+
+  /* Kaynak butonları */
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--edge);
+    border-radius: 999px;
+    background: var(--raised);
+    color: var(--text);
+    font-size: 14.5px;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background .15s, border-color .15s;
+  }
+
+  .btn span { color: var(--text-3); }
+
+  .btn svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
+    color: var(--text-3);
+  }
+
+  .btn:hover {
+    background: var(--raised-2);
+    border-color: #3d3f43;
+  }
+
+  .btn:hover svg { color: var(--accent); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* Alt bilgi */
+  footer {
+    margin-top: 76px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rail);
+    color: var(--text-3);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Başa dön oku */
+  .top {
+    position: fixed;
+    right: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom));
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid var(--rail);
+    border-radius: 50%;
+    background: rgba(34, 35, 38, 0.88);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: var(--text);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity .2s, transform .2s, border-color .15s;
+  }
+
+  .top.show {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .top:hover { border-color: var(--accent); }
+
+  .top svg { width: 20px; height: 20px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .top, .btn, .toc a { transition: none; }
+  }
+
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    .wrap { padding: 76px 24px 150px; }
+    .head h1 { font-size: 40px; }
+    h2 { font-size: 26px; }
+    .entry p, .entry li { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="head">
+    <h1>Emrullah Turanlı ve Taşyapı</h1>
+    <p>Kamuya açık kaynaklardaki olumsuz kayıtlar</p>
+    <p class="asof">27 Eylül 2026</p>
+    <nav class="toc" aria-label="Bölümler">
+      <a href="#yargi">Yargı</a>
+      <a href="#feto">FETÖ İddiaları</a>
+      <a href="#kktc">KKTC ve Ercan</a>
+      <a href="#imar">İmar</a>
+      <a href="#fikirtepe">Fikirtepe</a>
+      <a href="#ihale">İhaleler</a>
+      <a href="#sirbistan">Sırbistan</a>
+      <a href="#siyaset">Siyaset</a>
+      <a href="#ortaklar">Ortaklar</a>
+      <a href="#calisanlar">Çalışanlar</a>
+      <a href="#basin">Basın</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- YARGI -->
+    <section id="yargi">
+      <h2>Yargı süreçleri <span class="n">3</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">Aralık 2013</p>
+          <h3>17 Aralık yolsuzluk operasyonunda 4 günlük gözaltı ve tapeler</h3>
+          <p>Turanlı, 17 Aralık 2013 yolsuzluk operasyonunda gözaltına alındı ve dört gün emniyette kaldı[cite: 2]. Sorgu, şirket arazilerinin imar ve ruhsat işleri için yapılan telefon görüşmeleri üzerineydi[cite: 2]. Dosya 2014'te takipsizlikle kapandı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.sondakika.com/guncel/haber-3-kisi-emniyet-sorgularinin-ardindan-serbest-5446598/" target="_blank" rel="noopener noreferrer">Sondakika <span>2013</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.gazeteduvar.com.tr/devletten-hem-ihale-hem-de-fahri-konsolosluk-alan-is-insanlari-kimler-haber-1589622" target="_blank" rel="noopener noreferrer">DW Türkçe <span>2022</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2021</p>
+          <h3>Eski patronun ailesinden ağır suçlama: "Güveni suistimal edip mallarımıza çöktü"</h3>
+          <p>T.D. adlı 71 yaşındaki kadın savcılığa, Turanlı'nın eşinin güvenini kullanarak aileyi ekonomik olarak yıprattığını, iş hanı ve arsalarına el koymaya çalıştığını ve kendisini tehdit ettiğini anlattı[cite: 2]. Turanlı, aile mahkemesinden bu kadın hakkında üç aylık tedbir kararı aldırdı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.birgun.net/haber/cayci-olarak-baslayip-milyarder-olmus-627181" target="_blank" rel="noopener noreferrer">BirGün <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2025'ten beri</p>
+          <h3>İBB ve Şişli yönetimine "çete" ithamı: Milyarlık kuleler için rüşvet kavgası</h3>
+          <p>İBB soruşturmasında müşteki olarak ifade verdi ve Şişli projesi için belediye yetkililerinin kendisinden rüşvet istediğini öne sürdü[cite: 2]. Basın açıklamalarında Ekrem İmamoğlu ile Şişli Belediye Başkanı Resul Emrah Şahan'ı “çete üyesi” olarak niteledi[cite: 2]. Eski Şişli Belediye Başkanı Muammer Keskin rüşvet talebini yalanladı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.patronlardunyasi.com/tasyapinin-patronu-emrullah-turanlidan-vampir-bunlar-suclamasi" target="_blank" rel="noopener noreferrer">Patronlar Dünyası <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.ahaber.com.tr/gundem/2025/04/30/is-insani-emrullah-turanli-ibbdeki-mafya-duzenini-anlatti-dedigimizi-yap-yoksa-malini-alirlar" target="_blank" rel="noopener noreferrer">A Haber <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.trtv.net/2026/09/15/ibb-davasinda-uc-proje-son-asamaya-geldi/" target="_blank" rel="noopener noreferrer">TR Haberleri <span>2026</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FETÖ -->
+    <section id="feto">
+      <h2>FETÖ iddiaları ve suç duyuruları <span class="n">1</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">Kasım 2018</p>
+          <h3>Eski ortaktan savcılığa resmi suç duyurusu: "FETÖ'nün kasası, örgütün paralarını yönetiyor"</h3>
+          <p>Eski iş ortağı Mustafa Ezici, İstanbul Cumhuriyet Başsavcılığı'na sunduğu resmi suç duyurusunda Turanlı'nın devasa servetinin kaynağını sorgulayarak "FETÖ'nün paralarını yönettiğini ve örgütün gizli kasası olduğunu" öne sürdü, MASAK incelemesi talep etti. Turanlı suçlamaları organize iftira ve ticari şantaj olarak niteleyerek Ezici hakkında dava açtı. Dosyada kesinleşmiş bir örgüt üyeliği mahkumiyeti tespit edilmedi.</p>
+          <div class="links">
+            <a class="btn" href="https://www.istanbulgercegi.com/eski-ortagindan-emrullah-turanli-hakkinda-suc-duyurusu-fetonun-paralarini-yonetiyor_183430.html" target="_blank" rel="noopener noreferrer">İstanbul Gerçeği <span>2018</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.odatv.com/guncel/yedigimiz-tavuklara-zehir-mi-kondu-148261" target="_blank" rel="noopener noreferrer">OdaTV <span>2018</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- KKTC -->
+    <section id="kktc">
+      <h2>KKTC ve Ercan Havalimanı <span class="n">6</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">2015 – 2017</p>
+          <h3>Ercan'da büyük ortaklık çatlağı: "300 milyon avroyu ve yetkiyi gasp etti" davası</h3>
+          <p>Ercan işletmesini Taşyapı'yla birlikte alan, havalimanı deneyim belgesinin sahibi %20 ortak Terminal Yapı; yönetimden ve para transferlerinden dışlandığını, kâr payı alamadığını ve belgesinin Taşyapı'nın çıkarına kullanıldığını açıkladı[cite: 2]. Şirket Yüksek İdare Mahkemesi'nde davalar açtı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.hurriyet.com.tr/ekonomi/iki-turk-sirketinin-kibris-kavgasi-mahkemelik-oldu-40675330" target="_blank" rel="noopener noreferrer">Hürriyet <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.yeniduzen.com/ercanin-isletme-ortagi-terminal-yapi-insaat-ve-isletim-usulsuz-91036h.htm" target="_blank" rel="noopener noreferrer">Yenidüzen <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2017 – 2023</p>
+          <h3>Yüksek Mahkeme müteahhitlik iznini iptal etti, hükümetten 9 günde özel kalkan</h3>
+          <p>Hükümet 2017'de Taşyapı'ya, yurt dışından getirdiği ekip ve ekipmanla Ercan inşaatını yürütmesi için özel izin verdi[cite: 2]. İnşaat Müteahhitleri Birliği, şantiyede usulsüz işçi çalıştırıldığını ve denetimlerin engellendiğini açıkladı[cite: 2].</p>
+          <p>Yüksek İdare Mahkemesi özel izni 22 Mart 2023'te iptal etti; Bakanlar Kurulu dokuz gün sonra 2024 sonuna kadar geçerli yeni bir izin verdi[cite: 2]. Sözleşmeye göre 2016'da bitmesi gereken terminal 20 Temmuz 2023'te açıldı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.yeniduzen.com/turanlinin-muteahhitlik-karnesi-iptal-162207h.htm" target="_blank" rel="noopener noreferrer">Yenidüzen <span>2023</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.kibrispostasi.com/c35-KIBRIS_HABERLERI/n466039-muteahhitlik-karnesi-iptal-edilen-emrullah-turanliya-ozel-muteahhitlik-izni-verildi" target="_blank" rel="noopener noreferrer">Kıbrıs Postası <span>2023</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.tasyapi.com/tr/tasyapi-firmasi-olan-tandt-ercan-havalimanina-ozel-izin-1112" target="_blank" rel="noopener noreferrer">Taşyapı sitesi <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">Nisan 2019</p>
+          <h3>Devletin itibarını sarsan avans skandalı: Memur maaşı için şirketten 15 milyon TL</h3>
+          <p>KKTC Maliye Bakanı Serdar Denktaş, mart ayı memur maaşlarını ödemek için Ercan işletmecisinden devletin alacağına karşılık 15 milyon TL avans aldığını açıkladı[cite: 2]. Hükümet ortağı Kudret Özersay bunun devletin itibarı açısından sorunlu olduğunu, UBP lideri Ersin Tatar ise Borç Komitesi onayı bulunmadığını söyledi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.sozcu.com.tr/kktcde-memur-maaslarini-odemek-icin-is-insanindan-alinan-avans-tartisma-yaratti-wp4344122" target="_blank" rel="noopener noreferrer">Sözcü <span>2019</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2022</p>
+          <h3>Milyonluk vergi kıyağı ve kapalı kapılar ardında imzalanan gizli mutabakat</h3>
+          <p>Bakanlar Kurulu, işletmecinin ithalatındaki vergilerin ertelenmesini 20 milyon TL'den 40 milyon TL'ye çıkardı[cite: 2]. Aynı yıl Yenidüzen, Türkiye Ulaştırma Bakanı'nın ziyaretinde işletme süresinin uzatılması ve gelir paylaşımının değiştirilmesi için gizli bir mutabakat zaptı imzalandığını yazdı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.kibrispostasi.com/c35-KIBRIS_HABERLERI/n439492-ercan-isletmecisi-tt-icin-20-milyon-tl-daha-vergi-muafiyeti" target="_blank" rel="noopener noreferrer">Kıbrıs Postası <span>2022</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.yeniduzen.com/ercan-icin-gizli-mutabakat-zapti-156295h.htm" target="_blank" rel="noopener noreferrer">Yenidüzen <span>2022</span><svg viewBox="0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2023 – 2025</p>
+          <h3>Sayıştay'dan ağır tespitler: Devlete 59 milyon avroluk kambur ve tahsil edilmeyen vergi borçları</h3>
+          <p>Pandemi dönemi için işletme süresi uzatılacağına devlet, Ek Sözleşme No:5 ile 59 milyon avroluk ek mali yükümlülük üstlendi; muhalefet bunu işletmeciye vergi affı olarak nitelendi[cite: 2].</p>
+          <p>KKTC Sayıştayı Aralık 2025 raporunda bu tercihin esas sözleşmeyle çeliştiğini ve kamu yararını gösteren belge sunulmadığını tespit etti[cite: 2]. Rapora göre ciro payları zamanında tahsil edilmedi, gecikme zammı uygulanmadı ve 2018'den beri kapsamlı denetim yapılmadı[cite: 2]. Şirketin vergi dairesine yüz milyonlarca TL borcu varken ek sözleşme ödemeleri, borçlulara uygulanması gereken %30 kesinti yapılmadan sürdü[cite: 2]. Sayıştay bulguların Başsavcılığa bildirilmesini istedi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://haberkibris.com/sayistaydan-carpici-rapor-ercan-havalimaninda-59-milyon-euroluk-yukumluluk-1345-2025-12-12.html" target="_blank" rel="noopener noreferrer">Haber Kıbrıs <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.kibrispostasi.com/c35-KIBRIS_HABERLERI/n482766-emrullah-turanliya-59-milyon-euroluk-vergi-affi" target="_blank" rel="noopener noreferrer">Kıbrıs Postası <span>2023</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2024</p>
+          <h3>Sözleşme gizlice 2044'e uzatıldı, 105 milyonluk ödenmeyen elektrik faturası krizi</h3>
+          <p>CTP Milletvekili Salahi Şahiner, hakem heyeti kararıyla işletme süresinin 1.045 gün uzatılarak 19 Kasım 2044'e çekildiğini ve kararın kamuoyundan saklandığını açıkladı[cite: 2]. Kıb-Tek çalışanlarının sendikası El-Sen, havalimanının elektrik borcunun yıl içinde 45 milyon TL'den 105 milyon TL'lik taksitli borca ulaştığını duyurdu[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.kibrispostasi.com/c35-KIBRIS_HABERLERI/n533105-emrullah-turanliya-imtiyazlar-bitmiyor-rapor-kamuoyundan-sir-gibi-saklaniyor" target="_blank" rel="noopener noreferrer">Kıbrıs Postası <span>Eylül 2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.kibrispostasi.com/c35-KIBRIS_HABERLERI/n535551-emrullah-turanli-halkin-cebinden-her-ay-10-milyon-tl-aliyor" target="_blank" rel="noopener noreferrer">Kıbrıs Postası <span>Ekim 2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- İMAR -->
+    <section id="imar">
+      <h2>İmar ve inşaat <span class="n">3</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">2004 – 2019</p>
+          <h3>Kadıköy Meteoroloji talanı: 9 bin metrekare kaçak inşaat ve belediyeye 101 milyonluk haciz baskını</h3>
+          <p>Göztepe'deki kamuya ait Meteoroloji arazisine yapılan dört gökdelende Kadıköy Belediyesi, ayrıcalıklı imar kullanıldığını ve yaklaşık 9.000 m² imara aykırı inşaat yapıldığını açıkladı[cite: 2].</p>
+          <p>Taşyapı, inşaatın haksız durdurulduğunu öne sürerek belediyeye tazminat davası açtı[cite: 2]. Belediye 2016'da 101,9 milyon TL, istinafta 44,2 milyon TL, 2019'da yeniden 101,9 milyon TL ve faizini ödemeye mahkûm edildi; belediye kaçak inşaatı engellediği için cezalandırıldığını söyledi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.aa.com.tr/tr/turkiye/kadikoy-belediyesi-tasyapiya-101-milyon-lira-tazminat-odeyecek/682944" target="_blank" rel="noopener noreferrer">AA <span>2016</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.kadikoy.bel.tr/tr/haber-detay/tasyapi-kadikoylunun-parasina-da-goz-dikti-5001" target="_blank" rel="noopener noreferrer">Kadıköy Belediyesi <span>2016</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.cumhuriyet.com.tr/haber/tas-yapi-kadikoy-belediyesi-arasindaki-tazminat-davasinda-skandal-karar-1330450" target="_blank" rel="noopener noreferrer">Cumhuriyet <span>2019</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2006 – 2025</p>
+          <h3>İBB'nin 6 kez reddettiği kaçak otel ısrarı: Apartmanlardan tek tek daire toplama operasyonu</h3>
+          <p>İBB, Rumelihisarı Toprakkale Sokak'taki sağlık tesisi imarlı arsa için Taşyapı'nın planlarını 2006–2011 arasında altı kez reddetti[cite: 2]. Otel imarı için bakanlık nezdindeki girişimler 17 Aralık fezlekesine girdi; bakanlık 2017'de projeye “ÇED gerekli değildir” kararı verdi[cite: 2].</p>
+          <p>2025'te Cumhuriyet TV, Etiler Toprakkale Sokak'taki projede imara aykırı otelin bulunduğu adada şirketin her apartmandan birer daire alarak kat maliki olduğunu haberleştirdi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.diken.com.tr/17-25-aralik-tapesi-gercek-oldu-tasyapinin-oteline-ced-onayi/" target="_blank" rel="noopener noreferrer">Diken <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.mlsaturkey.com/tr/baris-terkoglunun-etiler-haberine-suc-duyurusu-sikayetci-tasyapinin-sahibi-emrullah-turanli" target="_blank" rel="noopener noreferrer">MLSA <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2012'den beri</p>
+          <h3>Tarihi okul arazisine hançer: Eksik demirle yükselen kuleler ve mühürlenen şantiye</h3>
+          <p>Şişli Endüstri Meslek Lisesi'nin bulunduğu ve 2012'de Bulgar Eksarhlığı Vakfı'na iade edilen arazi için vakıf, Taşyapı ile %50 kat karşılığı sözleşme yaptı[cite: 2]. Çevre ve Şehircilik Bakanlığı alanı özel proje alanı ilan etti, okul alanını yüzde 70 daralttı ve 32–37 katlı dört kuleye izin veren planları onayladı[cite: 2].</p>
+          <p>Planlar mahkemelerce iptal edildi ve yürütmeleri durduruldu; emsali 3'e çıkaran plan notu 2018'de iptal edildi[cite: 2]. Şişli Belediyesi inşaatı 2016'da durdurdu[cite: 2]. 2024-25'te 12 mm olması gereken bazı demirlerin 10 mm kullanıldığını ve iksa kazıklarının projeden farklı uygulandığını tespit ederek şantiyeyi mühürledi[cite: 2]. Belediye başkanı tutuklandıktan sonra inşaat sürdü; kaba inşaat Eylül 2026'da son aşamada[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.agos.com.tr/tr/yazi/14551/sisli-meslek-lisesi-yeniden-yapilacak" target="_blank" rel="noopener noreferrer">Agos <span>2016</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://t24.com.tr/haber/tas-yapinin-iki-bakanligi-karsi-karsiya-getiren-sislideki-gokdelen-projesi-durduruldu,375684" target="_blank" rel="noopener noreferrer">T24 <span>2016</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.diken.com.tr/yargidan-tasyapiya-izin-yok-sisli-endustri-yerine-avm-plani-bir-kez-daha-iptal/" target="_blank" rel="noopener noreferrer">Diken <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.birgun.net/haber/cayci-olarak-baslayip-milyarder-olmus-627181" target="_blank" rel="noopener noreferrer">BirGün <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FİKİRTEPE -->
+    <section id="fikirtepe">
+      <h2>Fikirtepe <span class="n">1</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">2011'den beri</p>
+          <h3>Fikirtepe'de kentsel dönüşüm fiyaskosu: Evleri yıkılan yüzlerce aile ortada kaldı, üstüne para istendi</h3>
+          <p>Taşyapı 2011'de Fikirtepe'de 300'ü aşkın hak sahibiyle anlaştı; evler 2012'de boşaltıldı ve sonra yıkıldı[cite: 2]. Hak sahipleri sekiz yılda yalnızca bir kez altı aylık kira yardımı aldıklarını, tek çivi çakılmadığını söyledi[cite: 2]. Şirket 13 Şubat 2019'da sözleşmeleri tek taraflı feshedip masraflarının faiziyle ödenmesini istedi[cite: 2].</p>
+          <p>Hak sahipleri, Taşyapı ve sözleşmeye kefil olarak imza atan Turanlı aleyhine dava açtı[cite: 2]. 2025'te bir hak sahibi 15 yılı aşkın süredir hiçbir ilerleme olmadığını yazdı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.cumhuriyet.com.tr/haber/tasyapi-evlerinden-etti-ustune-de-para-istedi-1412024" target="_blank" rel="noopener noreferrer">Cumhuriyet <span>2019</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.patronlardunyasi.com/fikirtepe-comlekci-magdurlarindan-tasyapiya-kira-davasi" target="_blank" rel="noopener noreferrer">Patronlar Dünyası <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://imarpanosu.com/tasyapi-fikirtepe-hak-sahiplerinin-kira-yardimi-isyani/" target="_blank" rel="noopener noreferrer">İmar Panosu <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.sikayetvar.com/tasyapi-insaat" target="_blank" rel="noopener noreferrer">Şikayetvar <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- İHALELER -->
+    <section id="ihale">
+      <h2>Kamu ihaleleri ve vergi <span class="n">5</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">Ekim 2007</p>
+          <h3>Meclis gündemine oturan hazine arazisi peşkeşi: 13 milyonluk alana 2 milyona el konuldu iddiası</h3>
+          <p>CHP Kırklareli Milletvekili Turgut Dibek, rayiç değeri 13 milyon YTL olan 538 dönümlük tarım niteliğindeki hazine arazisinin Turanlı'nın kurduğu Avrupa Çimento'ya ihalesiz 2 milyon YTL'ye satıldığını TBMM'de gündeme getirdi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.milliyet.com.tr/gundem/tasyapiya-kiyak-iddiasi-261029" target="_blank" rel="noopener noreferrer">Milliyet <span>2007</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2020 – 2021</p>
+          <h3>Danıştay'dan iki kez tokat yiyen adrese teslim metro ihalesi</h3>
+          <p>Ulaştırma Bakanlığı Emek–Şehir Hastanesi hattını, yalnızca davet edilen firmalara açık usulle Söğüt–Taşyapı ortaklığına 1,6 milyar TL'ye verdi[cite: 2]. Danıştay ihaleyi iptal etti[cite: 2]. Aynı usulle tekrarlanan ihaleyi yine aynı ortaklık yaklaşık 1,95 milyar TL'ye aldı; bu ihale de iptal edildi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.sozcu.com.tr/2021/gundem/davet-usuluyle-1-6-milyar-liralik-ihaleye-danistaydan-iptal-6397651/" target="_blank" rel="noopener noreferrer">Sözcü <span>2021</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.gazeteduvar.com.tr/emek-sehir-hastanesi-metro-hatti-ihalesi-ikinci-kez-iptal-edildi-haber-1537123" target="_blank" rel="noopener noreferrer">Gazete Duvar <span>2021</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2021</p>
+          <h3>Sayıştay raporunda ihale gizleme skandalı: Milyarlık projeler KİK denetiminden kaçırıldı</h3>
+          <p>Kısa Dalga'nın aktardığına göre Sayıştay'ın 2021 denetimi, Taşyapı'nın aldığı Aksaray–Ulukışla–Yenice hızlı tren, Konya Necmettin Erbakan Üniversitesi ring hattı ve Bursa metrosu ihalelerinin Kamu İhale Kurumu'na bildirilmediğini ortaya koydu[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://kisadalga.net/haber/detay/kamu-ihalelerinin-yildizlarina-diplomatik-misyon_47036" target="_blank" rel="noopener noreferrer">Kısa Dalga <span>2022</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2021 – 2023</p>
+          <h3>Devletten 28 milyarlık ihale topladı, 3 yıl boyunca tek kuruş kurumlar vergisi ödemedi</h3>
+          <p>Bianet'in derlemesine göre Taşyapı son beş yılda devletten 28,3 milyar TL'lik ihale ve yaklaşık 500 milyon TL vergi indirimi aldı; 2021, 2022 ve 2023'te ise vergiye tabi kazanç bildirmedi ve kurumlar vergisi ödemedi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://bianet.org/haber/turkiye-nin-vergi-vermeyen-sirketleri-298117" target="_blank" rel="noopener noreferrer">Bianet <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2023 – 2026</p>
+          <h3>21/b kılıfıyla kapalı kapılar ardında dağıtılan on milyarlarca liralık ballı ihaleler</h3>
+          <ul>
+            <li><b>TCDD Konyaray hattı:</b> 1,82 milyar TL, ani ve beklenmeyen durumlar için öngörülen 21/b pazarlık usulüyle (Nisan 2023)[cite: 2].</li>
+            <li><b>Aksaray–Ulukışla–Yenice hızlı tren, Kesim-1:</b> 48,65 milyar TL, pazarlık usulüyle, Özgün İnşaat ortaklığında (Şubat 2026)[cite: 2]. CHP, ihale yapılmadan önce hangi firmaların alacağını açıklamıştı[cite: 2].</li>
+            <li><b>Jandarma Astsubay Meslek Yüksekokulu, Ankara:</b> 8,45 milyar TL, 21/b pazarlık usulüyle (Eylül 2026)[cite: 2].</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://www.cumhuriyet.com.tr/siyaset/17-25-aralikta-gozaltina-alinmisti-secim-oncesi-milyarlik-vurgun-2079589" target="_blank" rel="noopener noreferrer">Cumhuriyet <span>2023</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://rayhaber.com/2026/02/aksaray-yenice-demiryolu-projesi-icin-imzalar-atildi/" target="_blank" rel="noopener noreferrer">RayHaber <span>2026</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://chp.org.tr/haberler/ulas-karasu-aksaray-ulukisla-yenice-yuksek-standartli-demiryolu-hatti-halesinin-2-etabini-fernasa-3-etabini-tas-yapiya-verecekler" target="_blank" rel="noopener noreferrer">CHP açıklaması<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.yenicaggazetesi.com/85-milyarlik-ihale-tanidik-isme-cayciliktan-milyarderlige-1072368h.htm" target="_blank" rel="noopener noreferrer">Yeniçağ <span>2026</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- SIRBİSTAN -->
+    <section id="sirbistan">
+      <h2>Sırbistan <span class="n">5</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">2018</p>
+          <h3>Sırbistan'da tek teklifli şüpheli ihale: Kamu maliyet tahmininin %18 üzerinde fatura</h3>
+          <p>Taşyapı, Millennium Team ile kurduğu konsorsiyumla Niş ve Vranje'de güvenlik personeline 376 konut yapım ihalesini tek teklif veren olarak aldı[cite: 2]. Araştırmacı gazetecilik ağı KRIK'e göre yaklaşık 15 milyon avroluk bedel bakanlığın tahmininden %18 yüksekti[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://n1info.rs/english/news/radar-publishes-transcript-of-state-agency-ex-directors-phone-call-showing-rigging-of-tenders/" target="_blank" rel="noopener noreferrer">N1 <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://forbes.n1info.rs/biznis/otkrivamo-jos-jedna-turska-firma-u-problemu-zasto-je-pukla-ljubav-milenijum-tima-i-tasjapija/" target="_blank" rel="noopener noreferrer">Forbes Srbija <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2019 – 2021</p>
+          <h3>Taşyapı Sırbistan temsilcisine rüşvet kelepçesi: Taşerondan 20 bin avro rüşvet iddiası</h3>
+          <p>Taşyapı Sırbistan şubesinin yasal temsilcisi Omar Musabegović, güvenlik personeli konutlarında bir firmaya taşeronluk vermek için 20.000 avro rüşvet istendiği şüphesiyle gözaltına alındı[cite: 2]. Taşyapı, savcılığın suç duyurusunu reddettiğini açıkladı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://forbes.n1info.rs/biznis/otkrivamo-jos-jedna-turska-firma-u-problemu-zasto-je-pukla-ljubav-milenijum-tima-i-tasjapija/" target="_blank" rel="noopener noreferrer">Forbes Srbija <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2019 – 2024</p>
+          <h3>Erdoğan ve Vučić'in açtığı otoyol fiyaskoya döndü: Yıllarca bitmeyen şantiyeler ve yetersiz işçi krizi</h3>
+          <p>Temel atma törenine Erdoğan ile Vučić'in katıldığı 18 km'lik Sremska Rača–Kuzmin otoyolu, 2023 sonunda bitmesi gerekirken Ocak 2024'te hâlâ açılmamıştı; Požega–Kotroman kesiminde çalışma başlamamıştı[cite: 2]. Eski Ulaştırma Bakanı Zorana Mihajlović, şirketle yetersiz işçi, gecikme ve özellikle konut inşaatında birçok sorun yaşadıklarını söyledi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://forbes.n1info.rs/biznis/otkrivamo-jos-jedna-turska-firma-u-problemu-zasto-je-pukla-ljubav-milenijum-tima-i-tasjapija/" target="_blank" rel="noopener noreferrer">Forbes Srbija <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://mikro-makro.net/tasyapi-ve-emrullah-turanli-sirbistani-da-karistirdi" target="_blank" rel="noopener noreferrer">Mikro-Makro <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2021 – 2024</p>
+          <h3>Sırbistan'da ortak ve tedarikçi isyanı: 567 güne varan gecikmeler ve peş peşe icra davaları</h3>
+          <p>Eski ortak Millennium Team 2021–2023 arasında Taşyapı'ya yaklaşık 10 dava açtı[cite: 2]. Forbes Srbija'ya konuşan tedarikçiler aylarca ödeme alamadıkları için dava açtıklarını söyledi[cite: 2]. Kamuya açık mali verilere göre şirketin tedarikçilere ortalama ödeme süresi 567 gündü ve uzun vadeli borçları 2022'de %200'ün üzerinde arttı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://forbes.n1info.rs/biznis/otkrivamo-jos-jedna-turska-firma-u-problemu-zasto-je-pukla-ljubav-milenijum-tima-i-tasjapija/" target="_blank" rel="noopener noreferrer">Forbes Srbija <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">Mart 2024</p>
+          <h3>Hükümeti sarsan gizli ihale tapeleri: Taşyapı'ya göre dikilen şartname genel müdür götürdü</h3>
+          <p>Radar dergisinin yayımladığı kayıtta eski Başbakan Ana Brnabić'in kabine şefi Miloš Popović ile dönemin Yapı Müdürlüğü direktörü Nebojša Šurlan, konut ihalesine Taşyapı'nın girip girmeyeceğini ve şartnamenin nasıl hazırlanacağını konuşuyor[cite: 2]. Radar'a göre konuşma, şartnamenin Taşyapı'ya göre hazırlandığını gösteriyordu[cite: 2]. Kayıtların yayımlanmasının ardından Šurlan istifa etti[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://n1info.rs/english/news/radar-publishes-transcript-of-state-agency-ex-directors-phone-call-showing-rigging-of-tenders/" target="_blank" rel="noopener noreferrer">N1 ve Radar <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- SİYASET -->
+    <section id="siyaset">
+      <h2>Siyasi bağlantılar <span class="n">3</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">2013 – 2014</p>
+          <h3>17 Aralık fezlekesindeki siyasi hat: Bakanlık ve Başbakanlık baskısıyla arazi kapatma pazarlığı</h3>
+          <p>Cumhuriyet ve Diken'in aktardığı fezleke kayıtlarında, Şişli'deki Bulgar Vakfı arazisinin Taşyapı projesi için özel proje alanı ilan edilmesi konuşuluyor; bürokratlar kararı Bakan Erdoğan Bayraktar'a, bakan da dönemin Başbakanı'na götürmeyi kararlaştırıyor[cite: 2]. Aynı haberlerde Başbakan'ın Bayraktar'a Turanlı'ya yardım etmesi talimatını verdiği yazıldı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.diken.com.tr/erdoganin-insaatci-isadamiyla-iliskisi-burokratlari-korkutmus-sislideki-arazi-ucuza-gitmis/" target="_blank" rel="noopener noreferrer">Diken <span>2014</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2018'den beri</p>
+          <h3>Balkanlar'da diplomatik torpil itirafı: "Şirketi Ankara ve bizzat Erdoğan dayattı"</h3>
+          <p>Taşyapı Sırbistan'daki devlet işlerini Türkiye–Sırbistan hükümetlerarası altyapı anlaşması kapsamında aldı; otoyol sözleşmesinin büyük kısmının Türk Eximbank'ça finanse edilmesi kararlaştırıldı[cite: 2]. Eski Bakan Zorana Mihajlović, şirketin Türk tarafınca ve Erdoğan'ın önerisiyle seçildiğini söyledi[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://forbes.n1info.rs/biznis/otkrivamo-jos-jedna-turska-firma-u-problemu-zasto-je-pukla-ljubav-milenijum-tima-i-tasjapija/" target="_blank" rel="noopener noreferrer">Forbes Srbija <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://mikro-makro.net/tasyapi-ve-emrullah-turanli-sirbistani-da-karistirdi" target="_blank" rel="noopener noreferrer">Mikro-Makro <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">2019'dan beri</p>
+          <h3>Gölge Diplomatlar deşifresi: Kamu müteahhidine Kongo'dan diplomatik dokunulmazlık kalkanı</h3>
+          <p>DW Türkçe'nin ICIJ ile yürüttüğü araştırma, kamu ihalesi alıp fahri konsolosluk unvanı taşıyan iş insanları arasında Turanlı'yı saydı[cite: 2]. Turanlı 2019'dan beri Kongo Demokratik Cumhuriyeti'nin İstanbul fahri konsolosu[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.gazeteduvar.com.tr/devletten-hem-ihale-hem-de-fahri-konsolosluk-alan-is-insanlari-kimler-haber-1589622" target="_blank" rel="noopener noreferrer">DW Türkçe <span>2022</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ORTAKLAR -->
+    <section id="ortaklar">
+      <h2>Ortaklar ve tedarikçiler <span class="n">2</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">2012 – 2020</p>
+          <h3>Eski ortakla kanlı bıçaklı kavga: Yasaklı atık yağın tavuk yemine satılması ve mahkumiyetler</h3>
+          <p>Atık yağ şirketinde ortak olduğu Mustafa Ezici; hisselerin %76,2'sinin Turanlı'nın yeğeni üzerine alındığını, fabrika tapusunun grubun Deha şirketine geçirilmek istendiğini ve işinin elinden alındığını açıkladı[cite: 2].</p>
+          <p>Ezici, biyodizel için toplanan ve yemde kullanımı yasaklanmış yağın tavuk yemi üreticilerine satıldığını CİMER'e bildirdi; inceleme sonunda iki tavuk markasına ceza kesildi[cite: 2]. Ezici ayrıca Turanlı'yı FETÖ'ye ait parayı yönetmekle suçlayan bir suç duyurusunda bulundu[cite: 2]. Turanlı'nın şikâyetiyle Ezici, sosyal medya paylaşımları nedeniyle hakaret ve iftiradan 2 yıl 8 ay hapis cezası aldı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.patronlardunyasi.com/mustafa-eziciden-emrullah-turanliya-sok-suclama-isimi-elimden-aldi" target="_blank" rel="noopener noreferrer">Patronlar Dünyası <span>2017</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://t24.com.tr/gundem/yasaklanan-biyodizel-yag-tavuk-yemi-yapildi-iki-unlu-firmaya-ceza-kesildi,890545" target="_blank" rel="noopener noreferrer">T24 <span>2020</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.cumhuriyet.com.tr/siyaset/17-25-aralikta-gozaltina-alinmisti-secim-oncesi-milyarlik-vurgun-2079589" target="_blank" rel="noopener noreferrer">Cumhuriyet <span>2023</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">Temmuz 2024</p>
+          <h3>Tedarikçinin feryadı: Malzeme teslim alındı, borç inkar edilerek para ödenmedi</h3>
+          <p>Konya banliyö hattı için malzeme veren bir tedarikçi, Şikayetvar'da faturasının ödenmediğini ve şirketin borcu olmadığını söyleyerek itiraz ettiğini yazdı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.sikayetvar.com/tasyapi-insaat" target="_blank" rel="noopener noreferrer">Şikayetvar <span>2024</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ÇALIŞANLAR -->
+    <section id="calisanlar">
+      <h2>Çalışanlar <span class="n">1</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">Ocak 2019</p>
+          <h3>Okmeydanı Hastanesi şantiyesinde emek gaspı: Ücretleri ödenmeyen işçilerden 8 günlük direniş</h3>
+          <p>Taşyapı'nın ana yüklenici olduğu hastane inşaatında taşeron HS Ring Elektrik'in işçileri, hakları ödenmeden işten çıkarıldıklarını söyleyerek sekiz gün eylem yaptı[cite: 2]. Bir işçi, anlaştığı ücret yerine asgari ücret yatırıldığını ve farkın ödenmediğini anlattı[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://m.bianet.org/bianet/emek/204555-okmeydani-hastanesi-insaati-ndaki-islerinden-cikarilan-isciler-anlatiyor" target="_blank" rel="noopener noreferrer">Bianet <span>2019</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- BASIN -->
+    <section id="basin">
+      <h2>Basın ve eleştirmenler <span class="n">2</span></h2>
+      <ol class="log">
+        <li class="entry">
+          <p class="when">2025 – 2026</p>
+          <h3>Yolsuzlukları yazan basına sansür ve yargı tacizi: RTÜK cezaları ve gazetecilere hapis davaları</h3>
+          <ul>
+            <li><b>Halk TV:</b> Taşyapı'nın RTÜK'e şikâyeti üzerine kanala %3 idari para cezası verildi (2025)[cite: 2].</li>
+            <li><b>Gözde Bedeloğlu, BirGün:</b> 19 Eylül 2025 tarihli yazısı nedeniyle Turanlı'nın şikâyetiyle hakaret ve iftiradan dava açıldı; duruşma 12 Kasım 2026'da[cite: 2].</li>
+            <li><b>Barış Terkoğlu, Cumhuriyet TV:</b> Etiler haberi nedeniyle basın yoluyla hakaret, iftira ve halkı yanıltıcı bilgi yayma suçlamasıyla suç duyurusu (2025)[cite: 2].</li>
+            <li><b>Sözcü:</b> Aksaray ihalesinin kazananını önceden yazan haberi nedeniyle Turanlı'nın açtığı dava (2025–2026)[cite: 2].</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://www.birgun.net/haber/cayci-olarak-baslayip-milyarder-olmus-627181" target="_blank" rel="noopener noreferrer">BirGün <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.birgun.net/haber/birgun-yazari-gozde-bedelogluna-acilan-dava-ertelendi-734884" target="_blank" rel="noopener noreferrer">BirGün <span>2026</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.mlsaturkey.com/tr/baris-terkoglunun-etiler-haberine-suc-duyurusu-sikayetci-tasyapinin-sahibi-emrullah-turanli" target="_blank" rel="noopener noreferrer">MLSA <span>2025</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn" href="https://www.sozcu.com.tr/emrullah-bey-in-mumu-3-5-ay-yandi-p298217" target="_blank" rel="noopener noreferrer">Sözcü <span>2026</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="when">Eylül 2026</p>
+          <h3>Ahmet Davutoğlu cephesinden sert rest: "İftira ve yalanlar için mahkemede hesap soracağız"</h3>
+          <p>Turanlı'nın bir YouTube yayınında Kadıköy arazisinin özelleştirmesinden Ahmet Davutoğlu hükümetini sorumlu tutması üzerine Davutoğlu'nun avukatı, yayının iftira ve hakaret içerdiğini açıklayarak Turanlı ve gazeteci Şaban Sevinç hakkında hukuki işlem başlatacaklarını duyurdu[cite: 2].</p>
+          <div class="links">
+            <a class="btn" href="https://www.cumhuriyet.com.tr/siyaset/davutoglu-ndan-gazeteci-saban-sevinc-ve-tasyapi-insaat-sahibi-emrullah-turanli-ya-yalanlama-hukuki-islemleri-baslatacagiz-2539420" target="_blank" rel="noopener noreferrer">Cumhuriyet <span>2026</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    27 Eylül 2026 itibarıyla kamuya açık kaynaklardan derlendi. Sayfa yalnızca olumsuz kayıtları içerir; bazı davalar sürüyor.
+  </footer>
+
+</div>
+
+<button class="top" type="button" aria-label="Başa dön">
+  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 15.5V4.5M5 9.5l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.top');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function toggle() {
+      btn.classList.toggle('show', window.scrollY > 480);
+    }
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduce.matches ? 'auto' : 'smooth' });
+    });
+  })();
+</script>
+</body>
+</html>
